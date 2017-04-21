@@ -1,0 +1,1943 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >tv4 (v1.3.0)</a>
+</h1>
+<h4>A public domain JSON Schema validator for JavaScript</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv4">module tv4</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">tv4.</span>valid</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.addFormat">
+            function <span class="apidocSignatureSpan">tv4.</span>addFormat
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.addLanguage">
+            function <span class="apidocSignatureSpan">tv4.</span>addLanguage
+            <span class="apidocSignatureSpan">(code, messageMap)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.addSchema">
+            function <span class="apidocSignatureSpan">tv4.</span>addSchema
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.defineError">
+            function <span class="apidocSignatureSpan">tv4.</span>defineError
+            <span class="apidocSignatureSpan">(codeName, codeNumber, defaultMessage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.defineKeyword">
+            function <span class="apidocSignatureSpan">tv4.</span>defineKeyword
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.dropSchemas">
+            function <span class="apidocSignatureSpan">tv4.</span>dropSchemas
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.freshApi">
+            function <span class="apidocSignatureSpan">tv4.</span>freshApi
+            <span class="apidocSignatureSpan">(language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.getDocumentUri">
+            function <span class="apidocSignatureSpan">tv4.</span>getDocumentUri
+            <span class="apidocSignatureSpan">(uri)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.getMissingUris">
+            function <span class="apidocSignatureSpan">tv4.</span>getMissingUris
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.getSchema">
+            function <span class="apidocSignatureSpan">tv4.</span>getSchema
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.getSchemaMap">
+            function <span class="apidocSignatureSpan">tv4.</span>getSchemaMap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.getSchemaUris">
+            function <span class="apidocSignatureSpan">tv4.</span>getSchemaUris
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.language">
+            function <span class="apidocSignatureSpan">tv4.</span>language
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.normSchema">
+            function <span class="apidocSignatureSpan">tv4.</span>normSchema
+            <span class="apidocSignatureSpan">(schema, baseUri)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.reset">
+            function <span class="apidocSignatureSpan">tv4.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.resolveUrl">
+            function <span class="apidocSignatureSpan">tv4.</span>resolveUrl
+            <span class="apidocSignatureSpan">(base, href)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.setErrorReporter">
+            function <span class="apidocSignatureSpan">tv4.</span>setErrorReporter
+            <span class="apidocSignatureSpan">(reporter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.validate">
+            function <span class="apidocSignatureSpan">tv4.</span>validate
+            <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.validateMultiple">
+            function <span class="apidocSignatureSpan">tv4.</span>validateMultiple
+            <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.validateResult">
+            function <span class="apidocSignatureSpan">tv4.</span>validateResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>tv4</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv4.</span>error</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv4.</span>errorCodes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv4.</span>missing</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv4.tv4">module tv4.tv4</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">tv4.tv4.</span>valid</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.addFormat">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>addFormat
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.addLanguage">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>addLanguage
+            <span class="apidocSignatureSpan">(code, messageMap)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.addSchema">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>addSchema
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.defineError">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>defineError
+            <span class="apidocSignatureSpan">(codeName, codeNumber, defaultMessage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.defineKeyword">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>defineKeyword
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.dropSchemas">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>dropSchemas
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.freshApi">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>freshApi
+            <span class="apidocSignatureSpan">(language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.getDocumentUri">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>getDocumentUri
+            <span class="apidocSignatureSpan">(uri)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.getMissingUris">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>getMissingUris
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.getSchema">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>getSchema
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.getSchemaMap">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>getSchemaMap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.getSchemaUris">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>getSchemaUris
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.language">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>language
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.normSchema">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>normSchema
+            <span class="apidocSignatureSpan">(schema, baseUri)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.reset">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.resolveUrl">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>resolveUrl
+            <span class="apidocSignatureSpan">(base, href)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.setErrorReporter">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>setErrorReporter
+            <span class="apidocSignatureSpan">(reporter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.validate">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>validate
+            <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.validateMultiple">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>validateMultiple
+            <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv4.tv4.validateResult">
+            function <span class="apidocSignatureSpan">tv4.tv4.</span>validateResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv4.</span>tv4</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv4.tv4.</span>error</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv4.tv4.</span>errorCodes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv4.tv4.</span>missing</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv4" id="apidoc.module.tv4">module tv4</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.addFormat" id="apidoc.element.tv4.addFormat">
+        function <span class="apidocSignatureSpan">tv4.</span>addFormat
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addFormat = function () {
+			globalContext.addFormat.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* `format` is a string, corresponding to the `&#x22;format&#x22;` value in schemas.
+* `validationFunction` is a function that either returns:
+  * `null` (meaning no error)
+  * an error string (explaining the reason for failure)
+
+````
+tv4.<span class="apidocCodeKeywordSpan">addFormat</span>(&#x27;decimal-digits&#x27;, function (data, schema) {
+	if (typeof data === &#x27;string&#x27; &#x26;&#x26; !/^[0-9]+$/.test(data)) {
+		return null;
+	}
+	return &#x22;must be string of decimal digits&#x22;;
+});
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.addLanguage" id="apidoc.element.tv4.addLanguage">
+        function <span class="apidocSignatureSpan">tv4.</span>addLanguage
+        <span class="apidocSignatureSpan">(code, messageMap)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addLanguage = function (code, messageMap) {
+			var key;
+			for (key in ErrorCodes) {
+				if (messageMap[key] &#x26;&#x26; !messageMap[ErrorCodes[key]]) {
+					messageMap[ErrorCodes[key]] = messageMap[key];
+				}
+			}
+			var rootCode = code.split(&#x27;-&#x27;)[0];
+			if (!languages[rootCode]) { // use for base language if not yet defined
+				languages[code] = messageMap;
+				languages[rootCode] = messageMap;
+			} else {
+				languages[code] = Object.create(languages[rootCode]);
+				for (key in messageMap) {
+					if (typeof languages[rootCode][key] === &#x27;undefined&#x27;) {
+						languages[rootCode][key] = messageMap[key];
+					}
+					languages[code][key] = messageMap[key];
+				}
+			}
+			return this;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Add a new template-based language map for the default error reporter (used by `tv4.language(code)`)
+
+* `code` is new language code
+* `map` is an object mapping error IDs or constant names (e.g. `103` or `&#x22;NUMBER_MAXIMUM&#x22;`) to language strings.
+
+````
+tv4.<span class="apidocCodeKeywordSpan">addLanguage</span>(&#x27;fr&#x27;, { ... });
+
+// select for use
+tv4.language(&#x27;fr&#x27;)
+````
+
+If you register a multi-level language code (e.g. `fr-FR`), then it will also be registered for plain `fr` if that does not already
+ exist.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.addSchema" id="apidoc.element.tv4.addSchema">
+        function <span class="apidocSignatureSpan">tv4.</span>addSchema
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSchema = function () {
+			return globalContext.addSchema.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+```
+
+The `&#x22;code&#x22;` property will refer to one of the values in `tv4.errorCodes` - in this case, `tv4.errorCodes.INVALID_TYPE
+`.
+
+To enable external schema to be referenced, you use:
+```javascript
+tv4.<span class="apidocCodeKeywordSpan">addSchema</span>(url, schema);
+```
+
+If schemas are referenced (```$ref```) but not known, then validation will return ```true``` and the missing schema(s) will be listed
+ in ```tv4.missing```. For more info see the API documentation below.
+
+## Usage 2: Multi-threaded validation
+
+Storing the error and missing schemas does not work well in multi-threaded environments, so there is an alternative syntax:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.defineError" id="apidoc.element.tv4.defineError">
+        function <span class="apidocSignatureSpan">tv4.</span>defineError
+        <span class="apidocSignatureSpan">(codeName, codeNumber, defaultMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defineError = function (codeName, codeNumber, defaultMessage) {
+			if (typeof codeName !== &#x27;string&#x27; || !/^[A-Z]+(_[A-Z]+)*$/.test(codeName)) {
+				throw new Error(&#x27;Code name must be a string in UPPER_CASE_WITH_UNDERSCORES&#x27;);
+			}
+			if (typeof codeNumber !== &#x27;number&#x27; || codeNumber%1 !== 0 || codeNumber &#x3c; 10000) {
+				throw new Error(&#x27;Code number must be an integer &#x3e; 10000&#x27;);
+			}
+			if (typeof ErrorCodes[codeName] !== &#x27;undefined&#x27;) {
+				throw new Error(&#x27;Error already defined: &#x27; + codeName + &#x27; as &#x27; + ErrorCodes[codeName]);
+			}
+			if (typeof ErrorCodeLookup[codeNumber] !== &#x27;undefined&#x27;) {
+				throw new Error(&#x27;Error code already used: &#x27; + ErrorCodeLookup[codeNumber] + &#x27; as &#x27; + codeNumber);
+			}
+			ErrorCodes[codeName] = codeNumber;
+			ErrorCodeLookup[codeNumber] = codeName;
+			ErrorMessagesDefault[codeName] = ErrorMessagesDefault[codeNumber] = defaultMessage;
+			for (var langCode in languages) {
+				var language = languages[langCode];
+				if (language[codeName]) {
+					language[codeNumber] = language[codeNumber] || language[codeName];
+				}
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.defineKeyword" id="apidoc.element.tv4.defineKeyword">
+        function <span class="apidocSignatureSpan">tv4.</span>defineKeyword
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defineKeyword = function () {
+			globalContext.defineKeyword.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `keyword` is a string, corresponding to a schema keyword
+* `validationFunction` is a function that either returns:
+  * `null` (meaning no error)
+  * an error string (explaining the reason for failure)
+  * an error object (containing some of: `code`/`message`/`dataPath`/`schemaPath`)
+
+````
+tv4.<span class="apidocCodeKeywordSpan">defineKeyword</span>(&#x27;my-custom-keyword&#x27;, function (data, value, schema) {
+	if (simpleFailure()) {
+		return &#x22;Failure&#x22;;
+	} else if (detailedFailure()) {
+		return {code: tv4.errorCodes.MY_CUSTOM_CODE, message: {param1: &#x27;a&#x27;, param2: &#x27;b&#x27;}};
+	} else {
+		return null;
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.dropSchemas" id="apidoc.element.tv4.dropSchemas">
+        function <span class="apidocSignatureSpan">tv4.</span>dropSchemas
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropSchemas = function () {
+			globalContext.dropSchemas.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### dropSchemas()
+
+Drop all known schema document URIs from the cache.
+
+````
+tv4.<span class="apidocCodeKeywordSpan">dropSchemas</span>();
+````
+
+##### freshApi()
+
+Return a new tv4 instance with no shared state.
+
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.freshApi" id="apidoc.element.tv4.freshApi">
+        function <span class="apidocSignatureSpan">tv4.</span>freshApi
+        <span class="apidocSignatureSpan">(language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">freshApi = function (language) {
+			var result = createApi();
+			if (language) {
+				result.language(language);
+			}
+			return result;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### freshApi()
+
+Return a new tv4 instance with no shared state.
+
+````
+var otherTV4 = tv4.<span class="apidocCodeKeywordSpan">freshApi</span>();
+````
+
+##### reset()
+
+Manually reset validation status from the simple `tv4.validate(data, schema)`. Although tv4 will self reset on each validation there
+ are some implementation scenarios where this is useful.
+
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.getDocumentUri" id="apidoc.element.tv4.getDocumentUri">
+        function <span class="apidocSignatureSpan">tv4.</span>getDocumentUri
+        <span class="apidocSignatureSpan">(uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getDocumentUri(uri) {
+	return uri.split(&#x27;#&#x27;)[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.getMissingUris" id="apidoc.element.tv4.getMissingUris">
+        function <span class="apidocSignatureSpan">tv4.</span>getMissingUris
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMissingUris = function () {
+			return globalContext.getMissingUris.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Return an Array with schema document URIs that are used as `$ref` in known schemas but which currently have no associated schema
+ data.
+
+Use this in combination with `tv4.addSchema(uri, schema)` to preload the cache for complete synchronous validation with.
+
+* `filter` optional RegExp to filter URIs
+
+````
+var arr = tv4.<span class="apidocCodeKeywordSpan">getMissingUris</span>();
+
+// optional filter using a RegExp
+var arr = tv4.getMissingUris(/^https?://example.com/);
+````
+
+##### dropSchemas()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.getSchema" id="apidoc.element.tv4.getSchema">
+        function <span class="apidocSignatureSpan">tv4.</span>getSchema
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSchema = function () {
+			return globalContext.getSchema.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### getSchema(uri)
+
+Return a schema from the cache.
+
+* `uri` the uri of the schema (may contain a `#` fragment)
+
+````js
+var schema = tv4.<span class="apidocCodeKeywordSpan">getSchema</span>(&#x27;http://example.com/schema&#x27;);
+````
+
+##### getSchemaMap()
+
+Return a shallow copy of the schema cache, mapping schema document URIs to schema objects.
+
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.getSchemaMap" id="apidoc.element.tv4.getSchemaMap">
+        function <span class="apidocSignatureSpan">tv4.</span>getSchemaMap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSchemaMap = function () {
+			return globalContext.getSchemaMap.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### getSchemaMap()
+
+Return a shallow copy of the schema cache, mapping schema document URIs to schema objects.
+
+````
+var map = tv4.<span class="apidocCodeKeywordSpan">getSchemaMap</span>();
+
+var schema = map[uri];
+````
+
+##### getSchemaUris(filter)
+
+Return an Array with known schema document URIs.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.getSchemaUris" id="apidoc.element.tv4.getSchemaUris">
+        function <span class="apidocSignatureSpan">tv4.</span>getSchemaUris
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSchemaUris = function () {
+			return globalContext.getSchemaUris.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### getSchemaUris(filter)
+
+Return an Array with known schema document URIs.
+
+* `filter` optional RegExp to filter URIs
+
+````
+var arr = tv4.<span class="apidocCodeKeywordSpan">getSchemaUris</span>();
+
+// optional filter using a RegExp
+var arr = tv4.getSchemaUris(/^https?://example.com/);
+````
+
+##### getMissingUris(filter)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.language" id="apidoc.element.tv4.language">
+        function <span class="apidocSignatureSpan">tv4.</span>language
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">language = function (code) {
+			if (!code) {
+				return currentLanguage;
+			}
+			if (!languages[code]) {
+				code = code.split(&#x27;-&#x27;)[0]; // fall back to base language
+			}
+			if (languages[code]) {
+				currentLanguage = code;
+				return code; // so you can tell if fall-back has happened
+			}
+			return false;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### language(code)
+
+Sets the language used by the default error reporter.
+
+* `code` is a language code, like `&#x27;en&#x27;` or `&#x27;en-gb&#x27;`
+
+````
+tv4.<span class="apidocCodeKeywordSpan">language</span>(&#x27;en-gb&#x27;);
+````
+
+If you specify a multi-level language code (e.g. `fr-CH`), then it will fall back to the generic version (`fr`) if needed.
+
+##### addLanguage(code, map)
+
+Add a new template-based language map for the default error reporter (used by `tv4.language(code)`)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.normSchema" id="apidoc.element.tv4.normSchema">
+        function <span class="apidocSignatureSpan">tv4.</span>normSchema
+        <span class="apidocSignatureSpan">(schema, baseUri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normSchema(schema, baseUri) {
+	if (schema &#x26;&#x26; typeof schema === &#x22;object&#x22;) {
+		if (baseUri === undefined) {
+			baseUri = schema.id;
+		} else if (typeof schema.id === &#x22;string&#x22;) {
+			baseUri = resolveUrl(baseUri, schema.id);
+			schema.id = baseUri;
+		}
+		if (Array.isArray(schema)) {
+			for (var i = 0; i &#x3c; schema.length; i++) {
+				normSchema(schema[i], baseUri);
+			}
+		} else {
+			if (typeof schema[&#x27;$ref&#x27;] === &#x22;string&#x22;) {
+				schema[&#x27;$ref&#x27;] = resolveUrl(baseUri, schema[&#x27;$ref&#x27;]);
+			}
+			for (var key in schema) {
+				if (key !== &#x22;enum&#x22;) {
+					normSchema(schema[key], baseUri);
+				}
+			}
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.reset" id="apidoc.element.tv4.reset">
+        function <span class="apidocSignatureSpan">tv4.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+			globalContext.reset();
+			this.error = null;
+			this.missing = [];
+			this.valid = true;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### reset()
+
+Manually reset validation status from the simple `tv4.validate(data, schema)`. Although tv4 will self reset on each validation there
+ are some implementation scenarios where this is useful.
+
+````
+tv4.<span class="apidocCodeKeywordSpan">reset</span>();
+````
+
+##### setErrorReporter(reporter)
+
+Sets a custom error reporter.  This is a function that accepts three arguments, and returns an error message (string):
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.resolveUrl" id="apidoc.element.tv4.resolveUrl">
+        function <span class="apidocSignatureSpan">tv4.</span>resolveUrl
+        <span class="apidocSignatureSpan">(base, href)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveUrl(base, href) {// RFC 3986
+
+	function removeDotSegments(input) {
+		var output = [];
+		input.replace(/^(\.\.?(\/|$))+/, &#x27;&#x27;)
+			.replace(/\/(\.(\/|$))+/g, &#x27;/&#x27;)
+			.replace(/\/\.\.$/, &#x27;/../&#x27;)
+			.replace(/\/?[^\/]*/g, function (p) {
+				if (p === &#x27;/..&#x27;) {
+					output.pop();
+				} else {
+					output.push(p);
+				}
+		});
+		return output.join(&#x27;&#x27;).replace(/^\//, input.charAt(0) === &#x27;/&#x27; ? &#x27;/&#x27; : &#x27;&#x27;);
+	}
+
+	href = parseURI(href || &#x27;&#x27;);
+	base = parseURI(base || &#x27;&#x27;);
+
+	return !href || !base ? null : (href.protocol || base.protocol) +
+		(href.protocol || href.authority ? href.authority : base.authority) +
+		removeDotSegments(href.protocol || href.authority || href.pathname.charAt(0) === &#x27;/&#x27; ? href.pathname : (href.pathname ? ((base
+.authority &#x26;&#x26; !base.pathname ? &#x27;/&#x27; : &#x27;&#x27;) + base.pathname.slice(0, base.pathname.lastIndexOf(&#x27;/&#x27;) + 1) + href.pathname) : base.pathname
+)) +
+		(href.protocol || href.authority || href.pathname ? href.search : (href.search || base.search)) +
+		href.hash;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.setErrorReporter" id="apidoc.element.tv4.setErrorReporter">
+        function <span class="apidocSignatureSpan">tv4.</span>setErrorReporter
+        <span class="apidocSignatureSpan">(reporter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setErrorReporter = function (reporter) {
+			if (typeof reporter === &#x27;string&#x27;) {
+				return this.language(reporter);
+			}
+			customErrorReporter = reporter;
+			return true;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### setErrorReporter(reporter)
+
+Sets a custom error reporter.  This is a function that accepts three arguments, and returns an error message (string):
+
+```
+tv4.<span class="apidocCodeKeywordSpan">setErrorReporter</span>(function (error, data, schema) {
+    return &#x22;Error code: &#x22; + error.code;
+});
+```
+
+The `error` object already has everything aside from the `.message` property filled in (so you can use `error.params`, `error.dataPath
+`, `error.schemaPath` etc.).
+
+If nothing is returned (or the empty string), then it falls back to the default error reporter.  To remove a custom error reporter
+, call `tv4.setErrorReporter(null)`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.validate" id="apidoc.element.tv4.validate">
+        function <span class="apidocSignatureSpan">tv4.</span>validate
+        <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (data, schema, checkRecursive, banUnknownProperties) {
+			var def = defaultErrorReporter(currentLanguage);
+			var errorReporter = customErrorReporter ? function (error, data, schema) {
+				return customErrorReporter(error, data, schema) || def(error, data, schema);
+			} : def;
+			var context = new ValidatorContext(globalContext, false, errorReporter, checkRecursive, banUnknownProperties);
+			if (typeof schema === &#x22;string&#x22;) {
+				schema = {&#x22;$ref&#x22;: schema};
+			}
+			context.addSchema(&#x22;&#x22;, schema);
+			var error = context.validateAll(data, schema, null, null, &#x22;&#x22;);
+			if (!error &#x26;&#x26; banUnknownProperties) {
+				error = context.banUnknownProperties(data, schema);
+			}
+			this.error = error;
+			this.missing = context.missing;
+			this.valid = (error === null);
+			return this.valid;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Use [json-schema](http://json-schema.org/) [draft v4](http://json-schema.org/latest/json-schema-core.html) to validate simple values
+ and complex objects using a rich [validation vocabulary](http://json-schema.org/latest/json-schema-validation.html) ([examples](
+http://json-schema.org/examples.html)).
+
+There is support for `$ref` with JSON Pointer fragment paths (```other-schema.json#/properties/myKey```).
+
+## Usage 1: Simple validation
+
+```javascript
+var valid = tv4.<span class="apidocCodeKeywordSpan">validate</span>(data, schema);
+```
+
+If validation returns ```false```, then an explanation of why validation failed can be found in ```tv4.error```.
+
+The error object will look something like:
+```json
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.validateMultiple" id="apidoc.element.tv4.validateMultiple">
+        function <span class="apidocSignatureSpan">tv4.</span>validateMultiple
+        <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMultiple = function (data, schema, checkRecursive, banUnknownProperties) {
+			var def = defaultErrorReporter(currentLanguage);
+			var errorReporter = customErrorReporter ? function (error, data, schema) {
+				return customErrorReporter(error, data, schema) || def(error, data, schema);
+			} : def;
+			var context = new ValidatorContext(globalContext, true, errorReporter, checkRecursive, banUnknownProperties);
+			if (typeof schema === &#x22;string&#x22;) {
+				schema = {&#x22;$ref&#x22;: schema};
+			}
+			context.addSchema(&#x22;&#x22;, schema);
+			context.validateAll(data, schema, null, null, &#x22;&#x22;);
+			if (banUnknownProperties) {
+				context.banUnknownProperties(data, schema);
+			}
+			var result = {toString: function () {
+				return this.valid ? &#x27;valid&#x27; : this.error.message;
+			}};
+			result.errors = context.errors;
+			result.missing = context.missing;
+			result.valid = (result.errors.length === 0);
+			return result;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## Usage 3: Multiple errors
+
+Normally, `tv4` stops when it encounters the first validation error.  However, you can collect an array of validation errors using
+:
+
+```javascript
+var result = tv4.<span class="apidocCodeKeywordSpan">validateMultiple</span>(data, schema);
+```
+
+The result will look something like:
+```json
+{
+&#x22;valid&#x22;: false,
+&#x22;errors&#x22;: [
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.validateResult" id="apidoc.element.tv4.validateResult">
+        function <span class="apidocSignatureSpan">tv4.</span>validateResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateResult = function () {
+			var result = {toString: function () {
+				return this.valid ? &#x27;valid&#x27; : this.error.message;
+			}};
+			this.validate.apply(result, arguments);
+			return result;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If schemas are referenced (```$ref```) but not known, then validation will return ```true``` and the missing schema(s) will be listed
+ in ```tv4.missing```. For more info see the API documentation below.
+
+## Usage 2: Multi-threaded validation
+
+Storing the error and missing schemas does not work well in multi-threaded environments, so there is an alternative syntax:
+
+```javascript
+var result = tv4.<span class="apidocCodeKeywordSpan">validateResult</span>(data, schema);
+```
+
+The result will look something like:
+```json
+{
+&#x22;valid&#x22;: false,
+&#x22;error&#x22;: {...},
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv4.tv4" id="apidoc.module.tv4.tv4">module tv4.tv4</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.addFormat" id="apidoc.element.tv4.tv4.addFormat">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>addFormat
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addFormat = function () {
+			globalContext.addFormat.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* `format` is a string, corresponding to the `&#x22;format&#x22;` value in schemas.
+* `validationFunction` is a function that either returns:
+  * `null` (meaning no error)
+  * an error string (explaining the reason for failure)
+
+````
+tv4.<span class="apidocCodeKeywordSpan">addFormat</span>(&#x27;decimal-digits&#x27;, function (data, schema) {
+	if (typeof data === &#x27;string&#x27; &#x26;&#x26; !/^[0-9]+$/.test(data)) {
+		return null;
+	}
+	return &#x22;must be string of decimal digits&#x22;;
+});
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.addLanguage" id="apidoc.element.tv4.tv4.addLanguage">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>addLanguage
+        <span class="apidocSignatureSpan">(code, messageMap)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addLanguage = function (code, messageMap) {
+			var key;
+			for (key in ErrorCodes) {
+				if (messageMap[key] &#x26;&#x26; !messageMap[ErrorCodes[key]]) {
+					messageMap[ErrorCodes[key]] = messageMap[key];
+				}
+			}
+			var rootCode = code.split(&#x27;-&#x27;)[0];
+			if (!languages[rootCode]) { // use for base language if not yet defined
+				languages[code] = messageMap;
+				languages[rootCode] = messageMap;
+			} else {
+				languages[code] = Object.create(languages[rootCode]);
+				for (key in messageMap) {
+					if (typeof languages[rootCode][key] === &#x27;undefined&#x27;) {
+						languages[rootCode][key] = messageMap[key];
+					}
+					languages[code][key] = messageMap[key];
+				}
+			}
+			return this;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Add a new template-based language map for the default error reporter (used by `tv4.language(code)`)
+
+* `code` is new language code
+* `map` is an object mapping error IDs or constant names (e.g. `103` or `&#x22;NUMBER_MAXIMUM&#x22;`) to language strings.
+
+````
+tv4.<span class="apidocCodeKeywordSpan">addLanguage</span>(&#x27;fr&#x27;, { ... });
+
+// select for use
+tv4.language(&#x27;fr&#x27;)
+````
+
+If you register a multi-level language code (e.g. `fr-FR`), then it will also be registered for plain `fr` if that does not already
+ exist.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.addSchema" id="apidoc.element.tv4.tv4.addSchema">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>addSchema
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSchema = function () {
+			return globalContext.addSchema.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+```
+
+The `&#x22;code&#x22;` property will refer to one of the values in `tv4.errorCodes` - in this case, `tv4.errorCodes.INVALID_TYPE
+`.
+
+To enable external schema to be referenced, you use:
+```javascript
+tv4.<span class="apidocCodeKeywordSpan">addSchema</span>(url, schema);
+```
+
+If schemas are referenced (```$ref```) but not known, then validation will return ```true``` and the missing schema(s) will be listed
+ in ```tv4.missing```. For more info see the API documentation below.
+
+## Usage 2: Multi-threaded validation
+
+Storing the error and missing schemas does not work well in multi-threaded environments, so there is an alternative syntax:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.defineError" id="apidoc.element.tv4.tv4.defineError">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>defineError
+        <span class="apidocSignatureSpan">(codeName, codeNumber, defaultMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defineError = function (codeName, codeNumber, defaultMessage) {
+			if (typeof codeName !== &#x27;string&#x27; || !/^[A-Z]+(_[A-Z]+)*$/.test(codeName)) {
+				throw new Error(&#x27;Code name must be a string in UPPER_CASE_WITH_UNDERSCORES&#x27;);
+			}
+			if (typeof codeNumber !== &#x27;number&#x27; || codeNumber%1 !== 0 || codeNumber &#x3c; 10000) {
+				throw new Error(&#x27;Code number must be an integer &#x3e; 10000&#x27;);
+			}
+			if (typeof ErrorCodes[codeName] !== &#x27;undefined&#x27;) {
+				throw new Error(&#x27;Error already defined: &#x27; + codeName + &#x27; as &#x27; + ErrorCodes[codeName]);
+			}
+			if (typeof ErrorCodeLookup[codeNumber] !== &#x27;undefined&#x27;) {
+				throw new Error(&#x27;Error code already used: &#x27; + ErrorCodeLookup[codeNumber] + &#x27; as &#x27; + codeNumber);
+			}
+			ErrorCodes[codeName] = codeNumber;
+			ErrorCodeLookup[codeNumber] = codeName;
+			ErrorMessagesDefault[codeName] = ErrorMessagesDefault[codeNumber] = defaultMessage;
+			for (var langCode in languages) {
+				var language = languages[langCode];
+				if (language[codeName]) {
+					language[codeNumber] = language[codeNumber] || language[codeName];
+				}
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.defineKeyword" id="apidoc.element.tv4.tv4.defineKeyword">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>defineKeyword
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defineKeyword = function () {
+			globalContext.defineKeyword.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `keyword` is a string, corresponding to a schema keyword
+* `validationFunction` is a function that either returns:
+  * `null` (meaning no error)
+  * an error string (explaining the reason for failure)
+  * an error object (containing some of: `code`/`message`/`dataPath`/`schemaPath`)
+
+````
+tv4.<span class="apidocCodeKeywordSpan">defineKeyword</span>(&#x27;my-custom-keyword&#x27;, function (data, value, schema) {
+	if (simpleFailure()) {
+		return &#x22;Failure&#x22;;
+	} else if (detailedFailure()) {
+		return {code: tv4.errorCodes.MY_CUSTOM_CODE, message: {param1: &#x27;a&#x27;, param2: &#x27;b&#x27;}};
+	} else {
+		return null;
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.dropSchemas" id="apidoc.element.tv4.tv4.dropSchemas">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>dropSchemas
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropSchemas = function () {
+			globalContext.dropSchemas.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### dropSchemas()
+
+Drop all known schema document URIs from the cache.
+
+````
+tv4.<span class="apidocCodeKeywordSpan">dropSchemas</span>();
+````
+
+##### freshApi()
+
+Return a new tv4 instance with no shared state.
+
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.freshApi" id="apidoc.element.tv4.tv4.freshApi">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>freshApi
+        <span class="apidocSignatureSpan">(language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">freshApi = function (language) {
+			var result = createApi();
+			if (language) {
+				result.language(language);
+			}
+			return result;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### freshApi()
+
+Return a new tv4 instance with no shared state.
+
+````
+var otherTV4 = tv4.<span class="apidocCodeKeywordSpan">freshApi</span>();
+````
+
+##### reset()
+
+Manually reset validation status from the simple `tv4.validate(data, schema)`. Although tv4 will self reset on each validation there
+ are some implementation scenarios where this is useful.
+
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.getDocumentUri" id="apidoc.element.tv4.tv4.getDocumentUri">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>getDocumentUri
+        <span class="apidocSignatureSpan">(uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getDocumentUri(uri) {
+	return uri.split(&#x27;#&#x27;)[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.getMissingUris" id="apidoc.element.tv4.tv4.getMissingUris">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>getMissingUris
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMissingUris = function () {
+			return globalContext.getMissingUris.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Return an Array with schema document URIs that are used as `$ref` in known schemas but which currently have no associated schema
+ data.
+
+Use this in combination with `tv4.addSchema(uri, schema)` to preload the cache for complete synchronous validation with.
+
+* `filter` optional RegExp to filter URIs
+
+````
+var arr = tv4.<span class="apidocCodeKeywordSpan">getMissingUris</span>();
+
+// optional filter using a RegExp
+var arr = tv4.getMissingUris(/^https?://example.com/);
+````
+
+##### dropSchemas()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.getSchema" id="apidoc.element.tv4.tv4.getSchema">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>getSchema
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSchema = function () {
+			return globalContext.getSchema.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### getSchema(uri)
+
+Return a schema from the cache.
+
+* `uri` the uri of the schema (may contain a `#` fragment)
+
+````js
+var schema = tv4.<span class="apidocCodeKeywordSpan">getSchema</span>(&#x27;http://example.com/schema&#x27;);
+````
+
+##### getSchemaMap()
+
+Return a shallow copy of the schema cache, mapping schema document URIs to schema objects.
+
+````
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.getSchemaMap" id="apidoc.element.tv4.tv4.getSchemaMap">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>getSchemaMap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSchemaMap = function () {
+			return globalContext.getSchemaMap.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### getSchemaMap()
+
+Return a shallow copy of the schema cache, mapping schema document URIs to schema objects.
+
+````
+var map = tv4.<span class="apidocCodeKeywordSpan">getSchemaMap</span>();
+
+var schema = map[uri];
+````
+
+##### getSchemaUris(filter)
+
+Return an Array with known schema document URIs.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.getSchemaUris" id="apidoc.element.tv4.tv4.getSchemaUris">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>getSchemaUris
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSchemaUris = function () {
+			return globalContext.getSchemaUris.apply(globalContext, arguments);
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### getSchemaUris(filter)
+
+Return an Array with known schema document URIs.
+
+* `filter` optional RegExp to filter URIs
+
+````
+var arr = tv4.<span class="apidocCodeKeywordSpan">getSchemaUris</span>();
+
+// optional filter using a RegExp
+var arr = tv4.getSchemaUris(/^https?://example.com/);
+````
+
+##### getMissingUris(filter)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.language" id="apidoc.element.tv4.tv4.language">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>language
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">language = function (code) {
+			if (!code) {
+				return currentLanguage;
+			}
+			if (!languages[code]) {
+				code = code.split(&#x27;-&#x27;)[0]; // fall back to base language
+			}
+			if (languages[code]) {
+				currentLanguage = code;
+				return code; // so you can tell if fall-back has happened
+			}
+			return false;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### language(code)
+
+Sets the language used by the default error reporter.
+
+* `code` is a language code, like `&#x27;en&#x27;` or `&#x27;en-gb&#x27;`
+
+````
+tv4.<span class="apidocCodeKeywordSpan">language</span>(&#x27;en-gb&#x27;);
+````
+
+If you specify a multi-level language code (e.g. `fr-CH`), then it will fall back to the generic version (`fr`) if needed.
+
+##### addLanguage(code, map)
+
+Add a new template-based language map for the default error reporter (used by `tv4.language(code)`)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.normSchema" id="apidoc.element.tv4.tv4.normSchema">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>normSchema
+        <span class="apidocSignatureSpan">(schema, baseUri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normSchema(schema, baseUri) {
+	if (schema &#x26;&#x26; typeof schema === &#x22;object&#x22;) {
+		if (baseUri === undefined) {
+			baseUri = schema.id;
+		} else if (typeof schema.id === &#x22;string&#x22;) {
+			baseUri = resolveUrl(baseUri, schema.id);
+			schema.id = baseUri;
+		}
+		if (Array.isArray(schema)) {
+			for (var i = 0; i &#x3c; schema.length; i++) {
+				normSchema(schema[i], baseUri);
+			}
+		} else {
+			if (typeof schema[&#x27;$ref&#x27;] === &#x22;string&#x22;) {
+				schema[&#x27;$ref&#x27;] = resolveUrl(baseUri, schema[&#x27;$ref&#x27;]);
+			}
+			for (var key in schema) {
+				if (key !== &#x22;enum&#x22;) {
+					normSchema(schema[key], baseUri);
+				}
+			}
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.reset" id="apidoc.element.tv4.tv4.reset">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+			globalContext.reset();
+			this.error = null;
+			this.missing = [];
+			this.valid = true;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### reset()
+
+Manually reset validation status from the simple `tv4.validate(data, schema)`. Although tv4 will self reset on each validation there
+ are some implementation scenarios where this is useful.
+
+````
+tv4.<span class="apidocCodeKeywordSpan">reset</span>();
+````
+
+##### setErrorReporter(reporter)
+
+Sets a custom error reporter.  This is a function that accepts three arguments, and returns an error message (string):
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.resolveUrl" id="apidoc.element.tv4.tv4.resolveUrl">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>resolveUrl
+        <span class="apidocSignatureSpan">(base, href)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveUrl(base, href) {// RFC 3986
+
+	function removeDotSegments(input) {
+		var output = [];
+		input.replace(/^(\.\.?(\/|$))+/, &#x27;&#x27;)
+			.replace(/\/(\.(\/|$))+/g, &#x27;/&#x27;)
+			.replace(/\/\.\.$/, &#x27;/../&#x27;)
+			.replace(/\/?[^\/]*/g, function (p) {
+				if (p === &#x27;/..&#x27;) {
+					output.pop();
+				} else {
+					output.push(p);
+				}
+		});
+		return output.join(&#x27;&#x27;).replace(/^\//, input.charAt(0) === &#x27;/&#x27; ? &#x27;/&#x27; : &#x27;&#x27;);
+	}
+
+	href = parseURI(href || &#x27;&#x27;);
+	base = parseURI(base || &#x27;&#x27;);
+
+	return !href || !base ? null : (href.protocol || base.protocol) +
+		(href.protocol || href.authority ? href.authority : base.authority) +
+		removeDotSegments(href.protocol || href.authority || href.pathname.charAt(0) === &#x27;/&#x27; ? href.pathname : (href.pathname ? ((base
+.authority &#x26;&#x26; !base.pathname ? &#x27;/&#x27; : &#x27;&#x27;) + base.pathname.slice(0, base.pathname.lastIndexOf(&#x27;/&#x27;) + 1) + href.pathname) : base.pathname
+)) +
+		(href.protocol || href.authority || href.pathname ? href.search : (href.search || base.search)) +
+		href.hash;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.setErrorReporter" id="apidoc.element.tv4.tv4.setErrorReporter">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>setErrorReporter
+        <span class="apidocSignatureSpan">(reporter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setErrorReporter = function (reporter) {
+			if (typeof reporter === &#x27;string&#x27;) {
+				return this.language(reporter);
+			}
+			customErrorReporter = reporter;
+			return true;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````
+
+##### setErrorReporter(reporter)
+
+Sets a custom error reporter.  This is a function that accepts three arguments, and returns an error message (string):
+
+```
+tv4.<span class="apidocCodeKeywordSpan">setErrorReporter</span>(function (error, data, schema) {
+    return &#x22;Error code: &#x22; + error.code;
+});
+```
+
+The `error` object already has everything aside from the `.message` property filled in (so you can use `error.params`, `error.dataPath
+`, `error.schemaPath` etc.).
+
+If nothing is returned (or the empty string), then it falls back to the default error reporter.  To remove a custom error reporter
+, call `tv4.setErrorReporter(null)`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.validate" id="apidoc.element.tv4.tv4.validate">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>validate
+        <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (data, schema, checkRecursive, banUnknownProperties) {
+			var def = defaultErrorReporter(currentLanguage);
+			var errorReporter = customErrorReporter ? function (error, data, schema) {
+				return customErrorReporter(error, data, schema) || def(error, data, schema);
+			} : def;
+			var context = new ValidatorContext(globalContext, false, errorReporter, checkRecursive, banUnknownProperties);
+			if (typeof schema === &#x22;string&#x22;) {
+				schema = {&#x22;$ref&#x22;: schema};
+			}
+			context.addSchema(&#x22;&#x22;, schema);
+			var error = context.validateAll(data, schema, null, null, &#x22;&#x22;);
+			if (!error &#x26;&#x26; banUnknownProperties) {
+				error = context.banUnknownProperties(data, schema);
+			}
+			this.error = error;
+			this.missing = context.missing;
+			this.valid = (error === null);
+			return this.valid;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Use [json-schema](http://json-schema.org/) [draft v4](http://json-schema.org/latest/json-schema-core.html) to validate simple values
+ and complex objects using a rich [validation vocabulary](http://json-schema.org/latest/json-schema-validation.html) ([examples](
+http://json-schema.org/examples.html)).
+
+There is support for `$ref` with JSON Pointer fragment paths (```other-schema.json#/properties/myKey```).
+
+## Usage 1: Simple validation
+
+```javascript
+var valid = tv4.<span class="apidocCodeKeywordSpan">validate</span>(data, schema);
+```
+
+If validation returns ```false```, then an explanation of why validation failed can be found in ```tv4.error```.
+
+The error object will look something like:
+```json
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.validateMultiple" id="apidoc.element.tv4.tv4.validateMultiple">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>validateMultiple
+        <span class="apidocSignatureSpan">(data, schema, checkRecursive, banUnknownProperties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMultiple = function (data, schema, checkRecursive, banUnknownProperties) {
+			var def = defaultErrorReporter(currentLanguage);
+			var errorReporter = customErrorReporter ? function (error, data, schema) {
+				return customErrorReporter(error, data, schema) || def(error, data, schema);
+			} : def;
+			var context = new ValidatorContext(globalContext, true, errorReporter, checkRecursive, banUnknownProperties);
+			if (typeof schema === &#x22;string&#x22;) {
+				schema = {&#x22;$ref&#x22;: schema};
+			}
+			context.addSchema(&#x22;&#x22;, schema);
+			context.validateAll(data, schema, null, null, &#x22;&#x22;);
+			if (banUnknownProperties) {
+				context.banUnknownProperties(data, schema);
+			}
+			var result = {toString: function () {
+				return this.valid ? &#x27;valid&#x27; : this.error.message;
+			}};
+			result.errors = context.errors;
+			result.missing = context.missing;
+			result.valid = (result.errors.length === 0);
+			return result;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## Usage 3: Multiple errors
+
+Normally, `tv4` stops when it encounters the first validation error.  However, you can collect an array of validation errors using
+:
+
+```javascript
+var result = tv4.<span class="apidocCodeKeywordSpan">validateMultiple</span>(data, schema);
+```
+
+The result will look something like:
+```json
+{
+&#x22;valid&#x22;: false,
+&#x22;errors&#x22;: [
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv4.tv4.validateResult" id="apidoc.element.tv4.tv4.validateResult">
+        function <span class="apidocSignatureSpan">tv4.tv4.</span>validateResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateResult = function () {
+			var result = {toString: function () {
+				return this.valid ? &#x27;valid&#x27; : this.error.message;
+			}};
+			this.validate.apply(result, arguments);
+			return result;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If schemas are referenced (```$ref```) but not known, then validation will return ```true``` and the missing schema(s) will be listed
+ in ```tv4.missing```. For more info see the API documentation below.
+
+## Usage 2: Multi-threaded validation
+
+Storing the error and missing schemas does not work well in multi-threaded environments, so there is an alternative syntax:
+
+```javascript
+var result = tv4.<span class="apidocCodeKeywordSpan">validateResult</span>(data, schema);
+```
+
+The result will look something like:
+```json
+{
+&#x22;valid&#x22;: false,
+&#x22;error&#x22;: {...},
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
